@@ -7,13 +7,22 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  
+        <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
 
   <body>
-    <%= link_to "Admin Dashboard", new_admin_user_session_path%>
+    <%= link_to "Admin Dashboard", new_admin_user_session_path, class: "btn btn-success"%>
     <%if not user_signed_in?%>
-    <%= link_to "Sign In", new_user_session_path%>
-    <%= link_to "Sign Up", new_user_registration_path%>
+    <%= link_to "Sign In", new_user_session_path, class: "btn btn-primary"%>
+    <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-info"%>
   <% end %>
   <% if user_signed_in?%>
     <%= link_to "Log Out", destroy_user_session_path, method: :delete%>
